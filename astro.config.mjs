@@ -31,7 +31,7 @@ export default defineConfig({
             // Each item here is one entry in the navigation menu.
             {
               label: "Холболт хийх",
-              link: "/gopay-docs/guides/integration/",
+              link: "/guides/integration/",
             },
           ],
         },
