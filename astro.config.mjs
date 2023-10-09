@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gopay-docs.github.io",
+  site: "https://hexagonlab.github.io/gopay-docs/",
   base: "/gopay-docs",
   integrations: [
     starlight({
@@ -16,7 +16,7 @@ export default defineConfig({
         "./src/fonts/font-face.css",
       ],
       social: {
-        github: "https://github.com/withastro/starlight",
+        github: "https://github.com/hexagonlab/",
       },
       locales: {
         root: {
