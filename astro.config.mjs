@@ -10,8 +10,8 @@ export default defineConfig({
       title: "GoPay",
       customCss: [
         // Path to your Tailwind base styles:
-        "./src/fonts/font-face.css",
         "./src/tailwind.css",
+        "./src/fonts/font-face.css",
       ],
       social: {
         github: "https://github.com/withastro/starlight",
@@ -39,6 +39,10 @@ export default defineConfig({
         },
         {
           label: "Reference",
+          autogenerate: { directory: "reference" },
+        },
+        {
+          label: "Release notes",
           link: "/release-notes/release-v1",
         },
       ],
