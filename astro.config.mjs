@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://gopay-docs.github.io",
+  base: "/gopay-docs",
   integrations: [
     starlight({
       title: "GoPay",
