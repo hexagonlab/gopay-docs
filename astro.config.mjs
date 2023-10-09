@@ -16,26 +16,26 @@ export default defineConfig({
       social: {
         github: "https://github.com/withastro/starlight",
       },
+      locales: {
+        root: {
+          label: "Mongolia",
+          lang: "mn-MN",
+        },
+      },
       sidebar: [
         {
-          label: "Getting started",
+          label: "Эхлэл",
           items: [
             // Each item here is one entry in the navigation menu.
             {
-              label: "Integration guide",
+              label: "Холболт хийх",
               link: "/guides/integration/",
             },
           ],
         },
         {
           label: "GoPay API",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            {
-              label: "GoPay API",
-              link: "/api/api/",
-            },
-          ],
+          autogenerate: { directory: "api" },
         },
         {
           label: "Reference",

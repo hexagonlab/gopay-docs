@@ -1,0 +1,92 @@
+---
+title: Authorization
+description: Aпп үүсгэснээр machine-to-machine authorization хийх боломжтой болно.
+lastUpdated: true
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+Aпп үүсгэснээр machine-to-machine authorization хийх боломжтой болно
+
+### Request token examples
+
+<Tabs>
+  <TabItem label="Java">
+  
+```java
+OkHttpClient client = new OkHttpClient().newBuilder()
+  .build();
+MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+RequestBody body = RequestBody.create(mediaType, "client_id=Your Client ID&client_secret=Your Client Secret&grant_type=client_credentials&scope=default");
+Request request = new Request.Builder()
+  .url("https://auth.gopay.mn/oauth/token")
+  .method("POST", body)
+  .addHeader("Content-Type", "application/x-www-form-urlencoded")
+  .build();
+Response response = client.newCall(request).execute();
+```
+  
+  </TabItem>
+  <TabItem label="NodeJs - Axios">
+
+```typescript
+const axios = require("axios");
+const qs = require("qs");
+let data = qs.stringify({
+  client_id: "your client id",
+  client_secret: "your client secret",
+  grant_type: "client_credentials",
+  scope: "default",
+});
+
+let config = {
+  method: "post",
+  maxBodyLength: Infinity,
+  url: "https://auth.gopay.mn/oauth/token",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+  },
+  data: data,
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+  </TabItem>
+
+  <TabItem label="PHP - Guzzle">
+
+```php
+<?php
+$client = new Client();
+$headers = [
+  'Content-Type' => 'application/x-www-form-urlencoded'
+];
+$options = [
+'form_params' => [
+  'client_id' => 'client1',
+  'client_secret' => 'clientsecret1',
+  'grant_type' => 'client_credentials',
+  'scope' => 'default'
+]];
+$request = new Request('POST', 'https://auth.gopay.mn/oauth/token', $headers);
+$res = $client->sendAsync($request, $options)->wait();
+echo $res->getBody();
+```
+
+  </TabItem>
+  <TabItem label="cURL">
+
+```bash
+curl -L -X POST 'https://auth.gopay.mn/oauth/token' -H 'Content-Type: application/x-www-form-urlencoded' -d 'client_id=your client id' -d 'client_secret=your client secret' -d 'grant_type=client_credentials' -d 'scope=default'
+```
+
+  </TabItem>
+</Tabs>

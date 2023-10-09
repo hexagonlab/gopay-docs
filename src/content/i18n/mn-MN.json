@@ -1,0 +1,22 @@
+{
+  "skipLink.label": "Агуулгыг алгасах",
+  "search.label": "Хайлт",
+  "search.shortcutLabel": "(Хайлт руу үсрэхэд / дар)",
+  "search.cancelLabel": "Болих",
+  "search.devWarning": "Search is only available in production builds. \nTry building and previewing the site to test it out locally.",
+  "themeSelect.accessibleLabel": "Төрх сонгох",
+  "themeSelect.dark": "Бараан",
+  "themeSelect.light": "Гэгээлэг",
+  "themeSelect.auto": "Auto",
+  "languageSelect.accessibleLabel": "Хэл сонгох",
+  "menuButton.accessibleLabel": "Цэс",
+  "sidebarNav.accessibleLabel": "Үндсэн",
+  "tableOfContents.onThisPage": "Агуулга",
+  "tableOfContents.overview": "Тойм",
+  "i18n.untranslatedContent": "Энэ контентийн агуулга таны сонгосон хэл дээр байхгүй байна.",
+  "page.editLink": "Хуудасыг засах",
+  "page.lastUpdated": "Сүүлд өөрчилсөн:",
+  "page.previousLink": "Дараах",
+  "page.nextLink": "Өмнөх",
+  "404.text": "Хуудас олдсонгүй. Та URL шалгах эсвэл хайлтын хэсгийг ашиглаж үзээрэй."
+}
