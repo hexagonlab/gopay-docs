@@ -1,0 +1,519 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "flex-pay",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://ywlpwfefqelkznqchgvo.supabase.co"
+    },
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      },
+      "noauthAuth": {
+        "type": "http",
+        "scheme": "noauth"
+      }
+    }
+  },
+  "paths": {
+    "/functions/v1/create-qr-invoice": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "get-qr-invoice Copy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "amount": "4001"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/functions/v1/pay-qr-invoice": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "pay qr invoice",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "first_name": "puugii",
+                  "last_name": "battulga",
+                  "id_number": "re88121212",
+                  "phone_number": "88034560",
+                  "code": "df7293cb-3d08-4ba2-bbea-f35e4289c6fd",
+                  "issuer_lender_id": 1
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/auth/v1/token": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "LOGIN",
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "string",
+                "example": "\"{\\n    \\\"email\\\": \\\"javkhlantur@hexagon.mn\\\",\\n    \\\"password\\\": \\\"1q2w3e4R\\\"\\n}\""
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3bHB3ZmVmcWVsa3pucWNoZ3ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyOTQ1MzQsImV4cCI6MjAwODg3MDUzNH0.m2I2LBcMp9s3ErjBx5MBkhk-PuNipfP0M8vBXmovSJI"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "grant_type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "password"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/lenders": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "SELECT BBSB",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3bHB3ZmVmcWVsa3pucWNoZ3ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyOTQ1MzQsImV4cCI6MjAwODg3MDUzNH0.m2I2LBcMp9s3ErjBx5MBkhk-PuNipfP0M8vBXmovSJI"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/merchants": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "SELECT MERCHANT",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3bHB3ZmVmcWVsa3pucWNoZ3ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyOTQ1MzQsImV4cCI6MjAwODg3MDUzNH0.m2I2LBcMp9s3ErjBx5MBkhk-PuNipfP0M8vBXmovSJI"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "default"
+        ],
+        "summary": "UPDATE MERCHANT",
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "string",
+                "example": "\"{\\n    \\\"name\\\": \\\"testmerchant\\\",\\n    \\\"id_number\\\":\\\"test1234\\\",\\n    \\\"email\\\":\\\"test@test.com\\\",\\n    \\\"city_id\\\":10,\\n    \\\"district_id\\\":353,\\n    \\\"addr\\\":\\\"Darkha uul aimag\\\",\\n    \\\"product_id\\\":1,\\n    \\\"phone\\\": 77007700\\n}\""
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3bHB3ZmVmcWVsa3pucWNoZ3ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyOTQ1MzQsImV4cCI6MjAwODg3MDUzNH0.m2I2LBcMp9s3ErjBx5MBkhk-PuNipfP0M8vBXmovSJI"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "return=representation"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eq.3"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "INSERT MERCHANT",
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "string",
+                "example": "\"{\\n    \\\"name\\\": \\\"testmerchant\\\",\\n    \\\"id_number\\\":\\\"test1234\\\",\\n    \\\"email\\\":\\\"test@test.com\\\",\\n    \\\"city_id\\\":10,\\n    \\\"district_id\\\":353,\\n    \\\"addr\\\":\\\"Darkha uul aimag\\\",\\n    \\\"product_id\\\":1,\\n    \\\"phone\\\": 77007700\\n}\""
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3bHB3ZmVmcWVsa3pucWNoZ3ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyOTQ1MzQsImV4cCI6MjAwODg3MDUzNH0.m2I2LBcMp9s3ErjBx5MBkhk-PuNipfP0M8vBXmovSJI"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "return=minimal"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/merchant_user": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "SELECT MERCHANT_USER",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3bHB3ZmVmcWVsa3pucWNoZ3ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyOTQ1MzQsImV4cCI6MjAwODg3MDUzNH0.m2I2LBcMp9s3ErjBx5MBkhk-PuNipfP0M8vBXmovSJI"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/bbsb": {
+      "patch": {
+        "tags": [
+          "default"
+        ],
+        "summary": "UPDATE BBSB",
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "string",
+                "example": "\"{\\n    \\\"name\\\": \\\"Талын Монгол Хүч\\\"\\n}\""
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3bHB3ZmVmcWVsa3pucWNoZ3ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyOTQ1MzQsImV4cCI6MjAwODg3MDUzNH0.m2I2LBcMp9s3ErjBx5MBkhk-PuNipfP0M8vBXmovSJI"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "return=representation"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eq.14"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "INSERT BBSB",
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "string",
+                "example": "\"{\\n    \\\"phone\\\": \\\"88888888\\\",\\n    \\\"id_number\\\":\\\"test1234\\\",\\n    \\\"email\\\":\\\"test@test.com\\\",\\n    \\\"city_id\\\":10,\\n    \\\"district_id\\\":353\\n}\""
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3bHB3ZmVmcWVsa3pucWNoZ3ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyOTQ1MzQsImV4cCI6MjAwODg3MDUzNH0.m2I2LBcMp9s3ErjBx5MBkhk-PuNipfP0M8vBXmovSJI"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "return=minimal"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/oauth/token": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "oauth token",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "client_id": "client1",
+                  "client_secret": "clientsecret1",
+                  "grant_type": "client_credentials",
+                  "scope": "default"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

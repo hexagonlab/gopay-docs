@@ -6,7 +6,37 @@ lastUpdated: true
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 
-Aпп үүсгэснээр machine-to-machine authorization хийх боломжтой болно
+Aпп үүсгэснээр GoPay API рүү хандах эрх бүхий client ID, client Secret-тэй болно.
+Уг client ID, Secret-ыг ашиглаж Access Token авах бөгөөд серверийн API дуудах болгонд хэрэглэнэ.
+
+## Токен авах хүсэлт
+
+| METHOD | URL                               | HEADER                                            |
+| ------ | --------------------------------- | ------------------------------------------------- |
+| POST   | https://auth.gopay.mn/oauth/token | `Content-Type: application/x-www-form-urlencoded` |
+
+### Параметрүүд
+
+| Параметер     | Тайлбар                             |
+| ------------- | ----------------------------------- |
+| client_id     | Аппын дугаар                        |
+| client_secret | Аппын нууц үг                       |
+| grant_type    | `client_credentials` гэж илгээнэ үү |
+| scope         | `default` гэж илгээнэ үү            |
+
+### Error Response
+
+| Нэр     | Төрөл   | Тайлбар                                               |
+| ------- | ------- | ----------------------------------------------------- |
+| success | boolean | амжилттай эсэх                                        |
+| message | String  | Хэрвээ алдаа гарсан тохиолдолд алдааны тайлбар байна. |
+
+### Success Response
+
+| Нэр          | Төрөл  | Тайлбар                                       |
+| ------------ | ------ | --------------------------------------------- |
+| access_token | String | GoPay API сервертэй харьцах үед ашиглах токен |
+| token_type   | String | Tokeн төрөл                                   |
 
 ### Request token examples
 
