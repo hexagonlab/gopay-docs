@@ -1,12 +1,11 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://hexagonlab.github.io/gopay-docs/",
-  base: "/",
+  base: "/gopay-docs",
   integrations: [
     starlight({
       title: "GoPay",
@@ -55,9 +54,6 @@ export default defineConfig({
     }),
     tailwind({
       applyBaseStyles: false,
-    }),
-    react({
-      include: ["**/react/*"],
     }),
   ],
 });
