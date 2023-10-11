@@ -16,7 +16,7 @@
   "i18n.untranslatedContent": "Энэ контентийн агуулга таны сонгосон хэл дээр байхгүй байна.",
   "page.editLink": "Хуудасыг засах",
   "page.lastUpdated": "Сүүлд өөрчилсөн:",
-  "page.previousLink": "Дараах",
-  "page.nextLink": "Өмнөх",
+  "page.previousLink": "Өмнөх",
+  "page.nextLink": "Дараах",
   "404.text": "Хуудас олдсонгүй. Та URL шалгах эсвэл хайлтын хэсгийг ашиглаж үзээрэй."
 }

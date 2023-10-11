@@ -1,5 +1,5 @@
 ---
-title: QR Invoice үүсгэх
+title: QR invoice үүсгэх
 description: QR invoice үүсгэх
 ---
 
@@ -22,16 +22,16 @@ description: QR invoice үүсгэх
 
 ### Request response
 
-| Нэр     | Төрөл   | Тайлбар                                               |
-| ------- | ------- | ----------------------------------------------------- |
-| success | boolean | амжилттай эсэх                                        |
-| message | string  | Хэрвээ алдаа гарсан тохиолдолд алдааны тайлбар байна. |
-| invoice | Invoice | Үүссэн invoice-ын дэлгэрэнгүй мэдээлэл                |
-| qr_data | string  | base64 QR image                                       |
+| Нэр     | Төрөл   | Тайлбар                                        |
+| ------- | ------- | ---------------------------------------------- |
+| success | boolean | Амжилттай эсэх                                 |
+| message | string  | Хэрвээ алдаа гарсан тохиолдолд алдааны тайлбар |
+| invoice | Invoice | Үүссэн invoice-ын дэлгэрэнгүй мэдээлэл         |
+| qr_data | string  | Base64 QR image                                |
 
 ### Invoice model
 
 | Нэр    | Төрөл  | Тайлбар           |
 | ------ | ------ | ----------------- |
-| code   | uuid   | invoice-ын дугаар |
-| amount | double | үүсгэсэн дүн      |
+| code   | uuid   | Invoice-ын дугаар |
+| amount | double | Үүсгэсэн дүн      |
