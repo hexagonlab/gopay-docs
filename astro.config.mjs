@@ -9,6 +9,11 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "GoPay",
+      logo: {
+        dark: "./src/assets/logo_dark.png",
+        light: "./src/assets/logo.png",
+        replacesTitle: true,
+      },
       customCss: [
         // Path to your Tailwind base styles:
         "./src/tailwind.css",
@@ -23,6 +28,7 @@ export default defineConfig({
           lang: "mn-MN",
         },
       },
+
       sidebar: [
         {
           label: "Эхлэл",
@@ -30,7 +36,7 @@ export default defineConfig({
             // Each item here is one entry in the navigation menu.
             {
               label: "Холболт хийх",
-              link: "/guides/integration/",
+              link: "/",
             },
           ],
         },
@@ -41,10 +47,12 @@ export default defineConfig({
           },
         },
         {
-          label: "Reference",
-          autogenerate: {
-            directory: "reference",
-          },
+          label: "Нууцлалын бодлого",
+          link: "/term-privacy/privacy",
+        },
+        {
+          label: "Үйлчилгээний нөхцөл",
+          link: "/term-privacy/terms",
         },
         {
           label: "Release notes",
