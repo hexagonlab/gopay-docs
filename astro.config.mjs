@@ -38,6 +38,10 @@ export default defineConfig({
               label: "Холболт хийх",
               link: "/",
             },
+            {
+              label: "Ерөнхий процесс",
+              link: "/guides/1-getting-started",
+            },
           ],
         },
         {
